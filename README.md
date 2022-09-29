@@ -6,4 +6,4 @@ Use `sbatch train_lstm_poet.sh` to train your model on the cluster.
 Evaluate your models by calling `python src/recurrent_poetry.py`!
 
 
-
+(Exercise inspired by: https://karpathy.github.io/2015/05/21/rnn-effectiveness/ )
