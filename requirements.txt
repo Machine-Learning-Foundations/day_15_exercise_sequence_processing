@@ -1,3 +1,7 @@
 nox
 numpy
 matplotlib
+jax[cpu]
+flax
+optax
+tqdm

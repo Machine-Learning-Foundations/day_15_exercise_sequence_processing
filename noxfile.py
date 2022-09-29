@@ -2,14 +2,6 @@
 import nox
 
 
-@nox.session(name="test")
-def run_test(session):
-    """Run pytest."""
-    session.install("-r", "requirements.txt")
-    session.install("pytest")
-    session.run("pytest")
-
-
 @nox.session(name="lint")
 def lint(session):
     """Check code conventions."""
@@ -25,7 +17,7 @@ def lint(session):
         "darglint",
     )
     session.install("flake8-bandit==2.1.2", "bandit==1.7.2")
-    session.run("flake8", "src", "tests", "noxfile.py")
+    session.run("flake8", "src", "noxfile.py")
 
 
 @nox.session(name="typing")
@@ -51,5 +43,5 @@ def format(session):
     """Fix common convention problems automatically."""
     session.install("black")
     session.install("isort")
-    session.run("isort", "src", "tests", "noxfile.py")
-    session.run("black", "src", "tests", "noxfile.py")
+    session.run("isort", "src", "noxfile.py")
+    session.run("black", "src", "noxfile.py")
