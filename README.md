@@ -27,3 +27,4 @@ $\odot$ indicates element-wise products.
 
 When you have trained a model run `src/recurrent_poetry.py`, enjoy!
 
+(Exercise inspired by: https://karpathy.github.io/2015/05/21/rnn-effectiveness/ )
