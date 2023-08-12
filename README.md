@@ -3,17 +3,24 @@
 This exercise explores the use of LSTM-networks for the task of poetry generation.
 To make it work finish `src/train.py`. The LSTM-cells are typically defined as,
 
-$$        \mathbf{z}_t = \tanh( \mathbf{W}_z \mathbf{x}_t + \mathbf{R}_z \mathbf{h}_{t-1}  + \mathbf{b}_z),  $$
-
-$$\mathbf{i}_t =  \sigma( \mathbf{W}_i \mathbf{x}_t + \mathbf{R}_i \mathbf{h}_{t-1} +\mathbf{b}_i), $$
-
-$$  \mathbf{f}_t = \sigma(\mathbf{W}_f \mathbf{x}_t + \mathbf{R}_f \mathbf{h}_{t-1} + \mathbf{b}_f), $$
-
-$$ \mathbf{c}_t = \mathbf{z}_t \odot \mathbf{i}_t + \mathbf{c}_{t-1} \odot \mathbf{f}_t, $$
-
-$$  \mathbf{o}_t = \sigma(\mathbf{W}_o \mathbf{x}_t + \mathbf{R}_o \mathbf{h}_{t-1} + \mathbf{b}_o), $$
-
-$$ \mathbf{h}_t = \tanh(\mathbf{c}_t) \odot \mathbf{o}_t. $$
+```math
+\mathbf{z}_t = \tanh( \mathbf{W}_z \mathbf{x}_t + \mathbf{R}_z \mathbf{h}_{t-1}  + \mathbf{b}_z),
+```
+```math
+\mathbf{i}_t =  \sigma( \mathbf{W}_i \mathbf{x}_t + \mathbf{R}_i \mathbf{h}_{t-1} +\mathbf{b}_i),
+```
+```math
+\mathbf{f}_t = \sigma(\mathbf{W}_f \mathbf{x}_t + \mathbf{R}_f \mathbf{h}_{t-1} + \mathbf{b}_f),
+```
+```math
+\mathbf{c}_t = \mathbf{z}_t \odot \mathbf{i}_t + \mathbf{c}_{t-1} \odot \mathbf{f}_t,
+```
+```math
+\mathbf{o}_t = \sigma(\mathbf{W}_o \mathbf{x}_t + \mathbf{R}_o \mathbf{h}_{t-1} + \mathbf{b}_o),
+```
+```math
+\mathbf{h}_t = \tanh(\mathbf{c}_t) \odot \mathbf{o}_t.
+```
 
 The input is denoted as $\mathbf{x}_t \in \mathbb{R}^{n_i}$ and it changes according to time $t$.
 Potential new states $\mathbf{z}_t$ are called block input. 
